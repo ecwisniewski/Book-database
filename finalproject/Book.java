@@ -2,13 +2,13 @@ package finalproject;
 
 public class Book implements java.io.Serializable {
 
-	private String title;
-	private String author;
-	private String copyrite;
-	private String genre;
-	private String isbn; 
-	private String publisher;
-	private static final long serialVersionUID=1L;
+	protected String title;
+	protected String author;
+	protected String copyrite;
+	protected String genre;
+	protected String isbn; 
+	protected String publisher;
+	protected static final long serialVersionUID=1567998952404037097L;
 	
 	// New Book object
 	public Book(String title, String author, String genre, String isbn, String pub, String copyrite)

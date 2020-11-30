@@ -1,30 +1,35 @@
 package finalproject;
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class BookDatabase implements java.io.Serializable {
 
-	private ArrayList<Book> database;
+	private ArrayList<UsefulBook> database;
 	private static final long serialVersionUID = 6751649745541556469L;
-	private String fileLocation;
+	private File fileLocation;
 	
 	public BookDatabase()
 	{
-		database = new ArrayList<Book>();
+		database = new ArrayList<UsefulBook>();
 		
 	}
-	public BookDatabase(String fileLocation)
+	public BookDatabase(File fileLocation)
 	{
-		database = new ArrayList<Book>();
+		database = new ArrayList<UsefulBook>();
 		this.fileLocation=fileLocation;
 	}
-	public void add(Book book)
-	{
-		System.out.print("Addition: "+book);
-		database.add(book);
-		System.out.print(database.size());
+	public void setFileLocation(File fileLocation) {
+		this.fileLocation = fileLocation;
 	}
-	public Book get(int i)
+	public File getFileLocation() {
+		return fileLocation;
+	}
+	public void add(UsefulBook book)
+	{
+		database.add(book);
+	}
+	public UsefulBook get(int i)
 	{
 		return database.get(i);
 	}
@@ -32,12 +37,27 @@ public class BookDatabase implements java.io.Serializable {
 	{
 		return database.size();
 	}
-	public boolean compare(Book book) {
+	public boolean compare(UsefulBook book) {
 		// Will check equals method
 		return database.contains(book);
 	}
-	public void delete(Book book) {
+	public void delete(UsefulBook book) {
 		database.remove(book);
+	}
+	public UsefulBook findBook(String title, String author) {
+		UsefulBook found=null;
+		UsefulBook test;
+		System.out.println("Expected Title: " + title + ", Author: " + author);
+		for(int i =0; i<database.size(); i++) {
+			test = database.get(i);
+			System.out.println("Test Title: " + test.getTitle() + ", Test Author: " + test.getAuthor());
+			if(test.getTitle().equals(title) && test.getAuthor().equals(author)) {
+				System.out.println("Found match!");
+				found = test;
+				break;
+			}
+		}
+		return found;
 	}
 	public void readFromText()
 	{
