@@ -6,6 +6,8 @@ The project uses serialized data in text files to hold the book lists, so that t
 Welcome Page 
  
 This is the Welcome page. I added a how-to for the user to direct them to which pages they might want to go to. The how-to explains how to add, edit, and remove books. There is also functionality to read a book, loan a book, or select a book. 
+
+![Welcome to Book Database](photos/welcome-page.jpg)
   
 There are two parts to this application. The first includes tables and lists of books and keeps track of that functionality, while the second part provides actions for the user to add, edit, and maintain the databases.  
 Here are output of some of that functionality. 
