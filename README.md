@@ -11,69 +11,86 @@ This is the Welcome page. I added a how-to for the user to direct them to which 
   
 There are two parts to this application. The first includes tables and lists of books and keeps track of that functionality, while the second part provides actions for the user to add, edit, and maintain the databases.  
 Here are output of some of that functionality. 
+
  
 # Add a Book 
  
  Adding a book is the first step. The program will conduct a size and digit check on the date and ISBN numbers but the user could technically use all text fields however they please. If the user is cataloging their own books and doesn’t want to use the ISBN or publishing information, they can leave these fields blank. Only Title and Author are required fields and if they are empty a pop up error message will appear. 
+
+![Add A book](photos/add-book.jpg)
   
  
 # Edit a Book 
  
 The next page is Edit and allows to user to search by Title and Author in order to edit the details. Then the book information available in the database will appear, allowing the user to edit the item and update the database. There is no current functionality for duplicate books, but this could be a future addition. 
   
-  
+![Edit Book](photos/edit-book.jpg)
+
+![Edit book info](photos/edit-book-2.jpg)
  
 You can continue to edit the note of a book by selecting edit note: 
- 
+
+![Edit book notes](photos/edit-book-3.jpg)
+
   
 # Remove a Book 
  
 Removing a book is another important if a user gets rid of a book or wants to remove a demo book in their database. It works similar to the Editing pages, except that the values are not enabled (the user cannot edit them). Selecting “Confirm Remove” will remove the book from the database. 
-  
+
+![Remove Book](photos/remove-book.jpg)
  
 Some other popup messages are added if a book cannot be found. 
  
-  
- 
- 
+![Remove book error](photos/remove-book-2.jpg)
  
  
 # Loan/Return a Book 
  
 As an action a user can “Loan”/“Return” a book. Adding the Loan a book feature was complicated because it required a list of “friends” to note who received books and what books friends currently hold. There is also a separate Loaned Books database to allow for easier management. To Loan a book, the program accepts input of Title and Author and friend’s name. It will search the database for friend’s name, add the friend if they do not exist, and add this information to the loaned book database. 
  
-  
+![lend to person](photos/return-book.jpg)
  
 This is a display of the loaned book database page. If enough books are added to extend the page there is a scroll pane for the table. 
- 
+
+![loaned database](photos/return-book-2.jpg)
   
 “Return” a book works similarly but will remove a person from the list unless they have two books: 
   
- 
-  
- 
- 
- 
- 
- 
+![Return](photos/return-book-3.jpg)
+
+![Databse after return](photos/return-book-4.jpg)
+
  
 # Read a Book 
  
 Another action is to “Read” a book. This will use Title and Author to find the book from the database and perform the action. The Read page allows a note, which isn’t displayed in the main database, but there is a separate page where the user can go back and read their notes and another to edit their notes. The books are also given a rating, which can be edited like any other field and are displayed in the Read table. Ratings need to be set to a value between 0.0 and 10.0, otherwise they won’t be added. 
-  
+
+![read book](photos/read-book.jpg)
+
 Next I’ll show the read database: 
+
+![Database after read](photos/read-book-2.jpg)
+
   
 # Read Notes 
  
 And the Notes item will show the notes for all the read books that have currently been filed. 
-  
+
+![Notes](photos/read-notes.jpg)
+
+
 # Select a Book 
  
 The Actions menu also includes “Select” which just selects a random book that has not been read from the main database and displays the book information. This is useful if you are not sure which book to choose and want to randomly select something from your personal library. This could be updated to include more options like already read books or a specific genre. For now, it just displays a “random” unread book (using Math.random() so I don’t assume it is entirely random). 
+
+![Select](photos/select-book.jpg)
+
   
 # View Bookshelf 
  
 A user can access their entire bookshelf in the database by selecting “All” from the menu. I tried to put in enough info so that it will show the scroll pane object in the table. Also tables are not editable, due to the fact that any edit to the table would not be saved. 
+
+![Bookshelf](photos/bookshelf.jpg)
   
  
 # Conclusion 
